@@ -1,12 +1,13 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
-  entry: './client/index.js',
+  mode: 'development',
+  entry: path.join(__dirname, 'client', 'index.js'),
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
-  mode: 'development',
   module: {
     rules: [{
       test: /\.jsx?$/,
@@ -17,8 +18,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  devtool: 'source-map',
-  devServer: {
-    contentBase: './server/public'
-  }
+  plugins: [
+    new Dotenv()
+  ],
+  devtool: 'source-map'
 }
