@@ -26,7 +26,7 @@ export class App extends React.Component {
           <div>
 
             <div>             
-                <h1>gigHub</h1>
+                <h1 className="box">♪i♪Hub</h1>
                 <Nav />
             </div>
           

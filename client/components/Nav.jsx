@@ -1,55 +1,48 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
-import {logoutUser} from '../actions/auth'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { logoutUser } from '../actions/auth'
 
 class Nav extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      showBurger: false
-    }
-    this.toggleBurger = this.toggleBurger.bind(this)
-  }
-  toggleBurger() {
-    this.setState({showBurger: !this.state.showBurger})
-  }
+  
   render() {
-    const {auth, logout} = this.props
-    const {showBurger} = this.state
-    return <nav className="navbar">
-      <div className="container">
-        <div className="navbar-brand">
-          <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </div>
-        <div id="navbarMenuHeroA" className={`navbar-menu ${showBurger ? "is-active" : ''}`}>
-          <div className="navbar-end">
-            { auth.isAuthenticated
-              ? (
-                <>
-                  <Link to='/' className="navbar-item is-large" onClick={() => logout()}>Logout</Link>
-                  
-                  <Link to= '/Pets' className="navbar-item" replace>Venues</Link>
-                  <Link to= '/AddNew' className="navbar-item" replace>Events</Link>
-                </>
-                )
-              : (
-                <>
-                  <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'>Login</Link>
-                  <Link onClick={this.toggleBurger} className="navbar-item" to='/register'>Register</Link>
-                </>
-              )
-            }
-          </div>
-        </div>
-      </div>
-    </nav>
-  }
-}
+    const { auth, logout } = this.props
+    
+    return (
+    <header className="header navbar-fixed-top">
+      <nav className="navbar" role="navigation">
+        <div className="container">
+
+              <div className="collapse navbar-collapse nav-collapse">
+
+                <div className="menu-container">
+                  <ul className="nav navbar-nav navbar-nav-right">
+                    {auth.isAuthenticated
+                      ? (
+                        <>
+                          <Link to='/' className="navbar-item is-large" onClick={() => logout()}>Logout</Link>
+
+                          <Link to='/Pets' className="navbar-item" replace>Venues</Link>
+                          <Link to='/AddNew' className="navbar-item" replace>Events</Link>
+                        </>
+                      )
+                      : (
+                        <>
+                          <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'>Login</Link>
+                          <br></br>
+                          <Link onClick={this.toggleBurger} className="navbar-item" to='/register'>Register</Link>
+                        </>
+                      )
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+  </nav>
+</header>
+)
+  }}
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
