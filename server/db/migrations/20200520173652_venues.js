@@ -6,7 +6,7 @@ exports.up = knex => {
       table.string('address')
       table.string('description')
       table.string('phone')
-      table.integer('email')
+      table.integer('website')
     })
   
   }

@@ -6,30 +6,30 @@ exports.seed = function (knex) {
       return knex('venues').insert([
         {
           id: 1, 
-          name: 'rowValue1',
+          name: 'Boston',
           image: 'rowValue1',
-          address: 'rowValue1',
+          address: '20 Blair Street, Te Aro, Wellington 6011',
           description: 'rowValue1',
-          phone: 'rowValue1',
-          email: 'rowValue1'
+          phone: '04-384 9070',
+          website: 'http://www.bostononblair.co.nz/page/home.aspx'
         },
         {
           id: 2, 
-          name: 'rowValue2',
+          name: 'Mish Mosh',
           image: 'rowValue2',
-          address: 'rowValue2',
+          address: '36 Courtenay Place, Te Aro, Wellington 6011',
           description: 'rowValue2',
-          phone: 'rowValue2',
-          email: 'rowValue2'
+          phone: '04-384 8015',
+          website: 'https://www.mishmosh.bar/'
         },
         {
           id: 3, 
-          name: 'rowValue3',
+          name: 'Sassy Loves Cash',
           image: 'rowValue3',
-          address: 'rowValue3',
+          address: '24 Courtenay Place, Te Aro, Wellington 6011',
           description: 'rowValue3',
-          phone: 'rowValue3',
-          email: 'rowValue3'
+          phone: '04-384 8015',
+          website: 'https://www.sassyloves.cash/#hello'
         }
       ])
     })
