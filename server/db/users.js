@@ -1,4 +1,4 @@
-
+const connection = require('./connection')
 const { generateHash } = require('authenticare/server')
 
 function createUser (user, db = connection) {

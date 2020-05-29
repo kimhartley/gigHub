@@ -1,9 +1,9 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('venues').del()
+  return knex('events').del()
     .then(function () {
       // Inserts seed entries
-      return knex('venues').insert([
+      return knex('events').insert([
         {
           id: 1, 
           name: 'rowValue1',

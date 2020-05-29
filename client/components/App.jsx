@@ -4,8 +4,8 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { checkAuth } from '../actions/auth'
 
-import Login from './Login'
-import Register from './Register'
+import Event from './Event'
+import Venue from './Venue'
 import Nav from './Nav'
 
 export class App extends React.Component {
@@ -26,16 +26,15 @@ export class App extends React.Component {
           <div>
 
             <div>             
-                <h1 className="box">♪i♪Hub</h1>
+                <h1>♪i♪Hub</h1>
                 <Nav />
             </div>
-          
 
-            <div className=''>
+            <div >
               {!auth.isAuthenticated}
 
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
+              <Route path="/venues" component={Venues} />
+              <Route path="/events" component={Events} />
               
             </div>
 

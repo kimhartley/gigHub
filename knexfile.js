@@ -7,18 +7,16 @@ module.exports = {
     connection: {
       filename: './dev.sqlite3'
     },
+    migrations: {
+      directory: 'server/db/migrations'
+    },
+    seeds: {
+      directory: 'server/db/seeds'
+    },
     useNullAsDefault: true
   },
 
-  test: {
-       client: 'sqlite3',
-       connection: {
-         filename: ':memory:'
-       },
-       useNullAsDefault: true
-     },
-
-  production: {
+  staging: {
     client: 'postgresql',
     connection: process.env.DATABASE_URL,
     pool: {
@@ -26,8 +24,28 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
+      tableName: 'knex_migrations',
+      directory: 'server/db/migrations'
 
-};
+    },
+    useNullAsDefault: true
+  },
+
+  production: {
+    client: 'postgresql',
+    connection: 
+      process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: 'server/db/migrations'
+    },
+    seeds: {
+      directory: 'server/db/seeds'
+    },
+  },
+  useNullAsDefault: true
+}

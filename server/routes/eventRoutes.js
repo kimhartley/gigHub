@@ -1,5 +1,5 @@
 const express = require('express')
-const db = require('../db/lostDB')
+const db = require('../db/events')
 const router = express.Router()
 
 router.get('/', (req, res) => {
