@@ -6,6 +6,9 @@ import { checkAuth } from '../actions/auth'
 
 import Event from './Event'
 import Venue from './Venue'
+
+import Login from './Login'
+import Register from './Register'
 import Nav from './Nav'
 
 export class App extends React.Component {
@@ -28,13 +31,15 @@ export class App extends React.Component {
             <div>             
                 <h1>♪i♪Hub</h1>
                 <Nav />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
             </div>
 
             <div >
-              {!auth.isAuthenticated}
+              {/* {!auth.isAuthenticated}
 
               <Route path="/venues" component={Venues} />
-              <Route path="/events" component={Events} />
+              <Route path="/events" component={Events} /> */}
               
             </div>
 
