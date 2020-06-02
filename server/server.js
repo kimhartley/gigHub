@@ -9,7 +9,7 @@ const server = express()
 server.use(express.json())
 server.use(express.static('public'))
 
-server.use('/api', authRoutes)
+server.use('/api/v1', authRoutes)
 server.use('/api/v1/events', eventRoutes)
 server.use('/api/v1/venues', venueRoutes)
 

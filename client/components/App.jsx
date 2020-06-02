@@ -36,10 +36,10 @@ export class App extends React.Component {
             </div>
 
             <div >
-              {/* {!auth.isAuthenticated}
-
+              {!auth.isAuthenticated}
+              
               <Route path="/venues" component={Venues} />
-              <Route path="/events" component={Events} /> */}
+              <Route path="/events" component={Events} />
               
             </div>
 

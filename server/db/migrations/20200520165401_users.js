@@ -4,7 +4,7 @@ exports.up = knex => {
       table.string('name')
       table.string('image')
       table.string('username')
-      table.integer('email')
+      table.string('email')
       table.string('hash')
       table.timestamps(true,true)
     })

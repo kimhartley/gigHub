@@ -22,15 +22,15 @@ class Nav extends React.Component {
                         <>
                           <Link to='/' className="navbar-item is-large" onClick={() => logout()}>Logout</Link>
 
-                          <Link to='/Pets' className="navbar-item" replace>Venues</Link>
-                          <Link to='/AddNew' className="navbar-item" replace>Events</Link>
+                          <Link to='/venues' className="navbar-item" replace>Venues</Link>
+                          <Link to='/events' className="navbar-item" replace>Events</Link>
                         </>
                       )
                       : (
                         <>
-                          <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'>Login</Link>
+                          <Link onClick={this.toggleBurger} className="box" to='/login'>Login</Link>
                           <br></br>
-                          <Link onClick={this.toggleBurger} className="navbar-item" to='/register'>Register</Link>
+                          <Link onClick={this.toggleBurger} className="box" to='/register'>Register</Link>
                         </>
                       )
                     }
