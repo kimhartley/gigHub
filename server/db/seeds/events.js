@@ -6,27 +6,27 @@ exports.seed = function (knex) {
       return knex('events').insert([
         {
           id: 1, 
-          name: 'rowValue1',
+          name: 'Superclub',
           image: 'rowValue1',
-          venue: 'rowValue1',
-          description: 'rowValue1',
-          other: 'rowValue1'
+          venue: 'Shooters',
+          description: '4 Area\'s, 4 genres ',
+          other: 'Saturday Night'
         },
         {
           id: 2, 
-          name: 'rowValue2',
+          name: 'Boost Mobile Hook Up Tour',
           image: 'rowValue2',
-          venue: 'rowValue2',
-          description: 'rowValue2',
-          other: 'rowValue2'
+          venue: 'TSB Arena',
+          description: 'NZ HipHop Stand Up',
+          other: 'Hoooook it up!'
         },
         {
           id: 3, 
-          name: 'rowValue3',
+          name: 'The Roots',
           image: 'rowValue3',
-          venue: 'rowValue3',
-          description: 'rowValue3',
-          other: 'rowValue3'
+          venue: 'Town Hall',
+          description: 'The best',
+          other: 'No support'
         }
       ])
     })

@@ -38,8 +38,8 @@ export class App extends React.Component {
             <div >
               {!auth.isAuthenticated}
               
-              <Route path="/venues" component={Venues} />
-              <Route path="/events" component={Events} />
+              <Route exact path="/venues" component={Venues} />
+              <Route exact path="/events" component={Events} />
               
             </div>
 
