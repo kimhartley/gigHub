@@ -1,18 +1,18 @@
 import request from 'superagent'
 import { getEventList } from '../apis/events'
 
-export function getEventList(event) {
+export function getEventList(events) {
     return {
         type: 'GET_EVENT',
-        event: event
+        events: events
     }
 }
 
 export function fetchEvent() {
     return (dispatch) => {
             getEventList()
-            .then((eventsList) => {
-                dispatch(getEventList(eventsList))
+            .then((events) => {
+                dispatch(getEventList(events))
             })
     }
 }

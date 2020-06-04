@@ -1,11 +1,11 @@
-function venue (state=[], action) {
+function venues (state=[], action) {
     
     switch (action.type) {
         case 'GET_VENUE':
-            return action.venue
+            return action.venues
         default:
             return state
     }
 }
 
-export default venue
+export default venues

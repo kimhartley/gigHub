@@ -3,16 +3,16 @@ import { getVenueList } from '../apis/venues'
 
 export function getVenueList(venue) {
     return {
-        type: 'GET_VENUE',
-        venue: venue
+        type: 'GET_VENUES',
+        venues: venues
     }
 }
 
-export function fetchVenue() {
+export function fetchVenues() {
     return (dispatch) => {
             getVenueList()
-            .then((venuesList) => {
-                dispatch(getVenueList(venuesList))
+            .then((venues) => {
+                dispatch(getVenueList(venues))
             })
     }
 }

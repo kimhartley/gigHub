@@ -5,16 +5,16 @@ const connection = knex(config[env])
 
 function getVenueList(db = connection) {
    
-    return db('venue')
+    return db('venues')
     .select()
 }
 
 function getVenueById(id, db = connection) {
     
-    return db('venue')
+    return db('venues')
     .where('id',id)
-    .then((venue) => {
-        return venue[0]
+    .then((venues) => {
+        return venues[0]
     })
 }
 

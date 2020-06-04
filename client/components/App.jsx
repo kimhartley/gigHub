@@ -6,6 +6,8 @@ import { checkAuth } from '../actions/auth'
 
 import Event from './Event'
 import Venue from './Venue'
+import HomePage from './HomePage'
+
 
 import Login from './Login'
 import Register from './Register'
@@ -31,16 +33,17 @@ export class App extends React.Component {
             <div>             
                 <h1>♪i♪Hub</h1>
                 <Nav />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+                <Route path="/" component={HomePage} />
             </div>
 
             <div >
-              {!auth.isAuthenticated}
-              
-              <Route exact path="/venues" component={Venues} />
-              <Route exact path="/events" component={Events} />
-              
+              {/* {!auth.isAuthenticated &&
+              <Route path="/home" component={HomePage} />
+              } */}
+              {/* <Route exact path="/venues" component={Venues} />
+              <Route exact path="/events" component={Events} /> */}
             </div>
 
         </div>

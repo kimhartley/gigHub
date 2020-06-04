@@ -5,8 +5,8 @@ const router = express.Router()
 router.get('/', (req, res) => {
 
     db.getEventList()
-    .then(event => {
-        res.json(event)
+    .then(events => {
+        res.json(events)
     })
 })
 

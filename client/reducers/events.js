@@ -1,11 +1,11 @@
-function event (state=[], action) {
+function events (state=[], action) {
     
     switch (action.type) {
         case 'GET_EVENT':
-            return action.event
+            return action.events
         default:
             return state
     }
 }
 
-export default event
+export default events
