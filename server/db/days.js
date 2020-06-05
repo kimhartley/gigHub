@@ -3,12 +3,22 @@ const config = require('../../knexfile')
 const env = process.env.NODE_ENV || 'development'
 const connection = knex(config[env])
 
-function getDays(db = connection) {
+function getDayList(db = connection) {
    
     return db('days')
     .select()
 }
 
+function getDay(id, db = connection) {
+    
+    return db('days')
+    .where('id',id)
+    .then((days) => {
+        return days[0]
+    })
+}
+
 module.exports = {
-    getDays
+    getDay,
+    getDayList
 }

@@ -3,9 +3,12 @@ import React from 'react'
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { checkAuth } from '../actions/auth'
+import { fetchDays } from '../actions/days'
+import { fetchEvents } from '../actions/events'
+import { fetchVenues } from '../actions/venues'
 
-import Event from './Event'
-import Venue from './Venue'
+import EventsPage from './EventsPage'
+import VenuesPage from './VenuesPage'
 import HomePage from './HomePage'
 
 
@@ -16,9 +19,11 @@ import Nav from './Nav'
 export class App extends React.Component {
 
   componentDidMount() {
-    const confirmSuccess = () => { }
+    const confirmSuccess = () => {}
     this.props.dispatch(checkAuth(confirmSuccess))
-    
+    this.props.dispatch(fetchDays())
+    this.props.dispatch(fetchEvents())
+    this.props.dispatch(fetchVenues())
   }
 
   render() {
@@ -35,15 +40,14 @@ export class App extends React.Component {
                 <Nav />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
-                <Route path="/" component={HomePage} />
             </div>
 
             <div >
-              {/* {!auth.isAuthenticated &&
+              {!auth.isAuthenticated &&
               <Route path="/home" component={HomePage} />
-              } */}
-              {/* <Route exact path="/venues" component={Venues} />
-              <Route exact path="/events" component={Events} /> */}
+              }
+              <Route exact path="/venues" component={VenuesPage} />
+              <Route exact path="/events" component={EventsPage} />
             </div>
 
         </div>

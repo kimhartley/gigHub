@@ -5,6 +5,7 @@ exports.up = knex => {
       table.string('image')
       table.string('username')
       table.string('email')
+      table.string('password')
       table.string('hash')
       table.timestamps(true,true)
     })

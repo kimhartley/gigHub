@@ -1,7 +1,7 @@
 import request from 'superagent'
-import { getVenueList } from '../apis/venues'
+import { getVenues } from '../apis/venues'
 
-export function getVenueList(venue) {
+export function getVenueList(venues) {
     return {
         type: 'GET_VENUES',
         venues: venues
@@ -10,7 +10,7 @@ export function getVenueList(venue) {
 
 export function fetchVenues() {
     return (dispatch) => {
-            getVenueList()
+            getVenues()
             .then((venues) => {
                 dispatch(getVenueList(venues))
             })

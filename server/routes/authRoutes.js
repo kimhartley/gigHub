@@ -7,8 +7,9 @@ const router = express.Router()
 
 applyAuthRoutes(router, {
   userExists,
-  getUserByName: getUserByUsername,
+  getUserByUsername,
   createUser
 })
 
 module.exports = router
+
