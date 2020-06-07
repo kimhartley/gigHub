@@ -8,20 +8,16 @@ export function eventsPage(props) {
 
         <h1>Events</h1>
 
-        {props.events.map (events => 
-            <div>
-                {events.name} 
-                <br></br>
-                {events.image}
-                <br></br>
-                {events.venue}
-                <br></br>
-                {events.description}
-                <br></br>
-                {events.other}      
-                <br></br>  
-                <br></br>        
-            </div>)}
+        {props.events.map((events) =>
+                <div key={events.id}>
+                    <p>{events.name}</p>
+                    <p>{events.image}</p>
+                    <p>{events.venue}</p>
+                    <p>{events.description}</p>
+                    <p>{events.other}</p>
+                    <br></br>
+                </div>
+            )}
         
         </div>
     )

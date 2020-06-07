@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {loginUser, loginError} from '../actions/auth'
+import HomePage from './Weekly'
 
 class Login extends React.Component {
   constructor(props) {
@@ -24,17 +25,17 @@ class Login extends React.Component {
   render() {
     const {auth} = this.props
     return (
-      <form onSubmit={this.submit}>
-        <h1>Login</h1>
+      <form className="form box" onSubmit={this.submit}>
+        <h1 className="title is-2">Login</h1>
         <hr />
-        {auth.errorMessage && <span>{auth.errorMessage}</span>}
-        <label>Username
-          <input required placeholder="User Name" type="text" name="username" autoComplete="username" value={this.state.username} onChange={this.updateDetails}/>
+        {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
+        <label className="label is-large has-text-centered">Username
+          <input required className="input has-text-centered is-large is-fullwidth" placeholder="User Name" type="text" name="username" autoComplete="username" value={this.state.username} onChange={this.updateDetails}/>
         </label>
-        <label>Password
-          <input required placeholder="Password" type="password" name="password" autoComplete="current-password" value={this.state.password} onChange={this.updateDetails}/>
+        <label className="label is-large has-text-centered">Password
+          <input required className="input has-text-centered is-large is-fullwidth" placeholder="Password" type="password" name="password" autoComplete="current-password" value={this.state.password} onChange={this.updateDetails}/>
         </label>
-        <input value='Login' type="submit" />
+        <input className="button is-large is-fullwidth is-success" value='Login' type="submit" />
       </form>
     )
   }

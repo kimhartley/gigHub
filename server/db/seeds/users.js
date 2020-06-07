@@ -10,7 +10,6 @@ exports.seed = function (knex) {
           {
             id: 1,
             name: 'Ninja',
-            image: 'rowValue1',
             username: 'Ninja Steps',
             email: 'ninjasteps@gmail.com',
             password: 'wellihood'

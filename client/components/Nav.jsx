@@ -5,42 +5,54 @@ import { logoutUser } from '../actions/auth'
 
 class Nav extends React.Component {
   
+  constructor(props) {
+    super(props)
+    this.state = {
+      showBurger: false
+    }
+    this.toggleBurger = this.toggleBurger.bind(this)
+  }
+  toggleBurger() {
+    this.setState({showBurger: !this.state.showBurger})
+  }
+
   render() {
-    const { auth, logout } = this.props
     
-    return (
-    <header className="header navbar-fixed-top">
-      <nav className="navbar" role="navigation">
-        <div className="container">
+    const { auth, logout } = this.props
+    const {showBurger} = this.state
 
-              <div className="collapse navbar-collapse nav-collapse">
-
-                <div className="menu-container">
-                  <ul className="nav navbar-nav navbar-nav-right">
-                    {auth.isAuthenticated
-                      ? (
-                        <>
-                          <Link to='/' className="navbar-item is-large" onClick={() => logout()}>Logout</Link>
-
-                          <Link to='/venues' className="navbar-item" replace>Venues</Link>
-                          <Link to='/events' className="navbar-item" replace>Events</Link>
-                        </>
-                      )
-                      : (
-                        <>
-                          <Link onClick={this.toggleBurger} className="box" to='/login'>Login</Link>
-                          <br></br>
-                          <Link onClick={this.toggleBurger} className="box" to='/register'>Register</Link>
-                        </>
-                      )
-                    }
-                  </ul>
-                </div>
-              </div>
-            </div>
+    return <nav className="navbar">
+    <div className="container">
+      <div className="navbar-brand">
+        <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenuHeroA" className={`navbar-menu ${showBurger ? "is-active" : ''}`}>
+        <div className="navbar-end">
+          { auth.isAuthenticated
+            ? (
+                <>
+                <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/events'>Events</Link>
+                <Link onClick={this.toggleBurger} className="navbar-item" to='/venues'>Venues</Link>
+                <Link onClick={this.toggleBurger} className="navbar-item" to='/weekly'>Weekly</Link>
+                <Link to='/' className="navbar-item is-large" onClick={() => logout()}>Logout</Link>
+                </>
+              )
+            : (
+              <>
+                <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'>Login</Link>
+                <Link onClick={this.toggleBurger} className="navbar-item" to='/register'>Register</Link>
+              </>
+            )
+          }
+        </div>
+      </div>
+    </div>
   </nav>
-</header>
-)
+
   }}
 
 
