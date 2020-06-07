@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 export function eventsPage(props) {
     
@@ -10,11 +11,9 @@ export function eventsPage(props) {
 
         {props.events.map((events) =>
                 <div key={events.id}>
-                    <p>{events.name}</p>
-                    <p>{events.image}</p>
-                    <p>{events.venue}</p>
-                    <p>{events.description}</p>
-                    <p>{events.other}</p>
+                    <img src={events.image}></img>
+                    <Link to= {`/events/${events.id}`}><p>{events.name}</p></Link>
+                    <Link to= {`/events/${events.id}`}><p>{events.venue}</p></Link>
                     <br></br>
                 </div>
             )}

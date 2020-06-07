@@ -10,12 +10,8 @@ export function venuesPage(props) {
 
             {props.venues.map((venues) =>
                 <div key={venues.id}>
-                    <p>{venues.name}</p>
-                    <p>{venues.image}</p>
-                    <p>{venues.address}</p>
-                    <p>{venues.description}</p>
-                    <p>{venues.phone}</p>
-                    <p>{venues.website}</p>
+                    <Link to= {`/venues/${venues.name}`}><p>{venues.name}</p></Link>
+                    <img src={venues.image}></img>
                     <br></br>
                 </div>
             )}

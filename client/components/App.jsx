@@ -8,6 +8,8 @@ import { checkAuth } from '../actions/auth'
 
 import EventsPage from './EventsPage'
 import VenuesPage from './VenuesPage'
+import Event from './Event'
+import Venue from './Venue'
 import Weekly from './Weekly'
 import Login from './Login'
 import Register from './Register'
@@ -46,6 +48,8 @@ export class App extends React.Component {
             <Route path="/weekly" component={Weekly} />
             <Route path="/venues" component={VenuesPage} />
             <Route path="/events" component={EventsPage} />
+            <Route path="/venues/:id" component={Venue} />
+            <Route path="/events/:id" component={Event} />
           </div>
 
         </div>
