@@ -10,4 +10,24 @@ router.get('/', (req, res) => {
     })
 })
 
+
+router.get('/events/:eventsId', (req, res) => {
+    
+    let id = req.params.eventsId
+    db.getEvent(id)
+        .then((events) => {
+            res.json(events)
+        })
+    
+})
+
+router.get('/:eventsId', (req,res) => {
+    let id = req.params.eventsId
+    db.getEvent(id)
+    .then((events) => {
+        res.json(events)
+    })
+    
+})
+
 module.exports = router

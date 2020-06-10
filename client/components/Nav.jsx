@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+
 import { logoutUser } from '../actions/auth'
 
 class Nav extends React.Component {
@@ -58,7 +59,7 @@ class Nav extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logout: () => dispatch(logoutUser())
+    logout: () => dispatch(logoutUser()),
   }
 }
 

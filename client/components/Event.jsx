@@ -1,24 +1,27 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-export function eventPage(props) {
-    
+export function event(props) {
+
+    console.log(props.match.params)
+  
+    const events = props.events
+  
     return (
-        <div>
-
-        <h1>{events.name}</h1>
-
-        {props.events.map((events) =>
-                <div key={events.id}>
-                    <p>{events.image}</p>
-                    <p>{events.venue}</p>
-                    <p>{events.description}</p>
-                    <p>{events.other}</p>
-                    <br></br>
-                </div>
-            )}
-        
-        </div>
+         
+         <div>
+             <h1>{events.name}</h1>
+              hello
+            {(props.match.params == events.id) && 
+                <>
+                <p>{events.image}</p>
+                <p>{events.venue}</p>
+                <p>{events.description}</p>
+                <p>{events.other}</p>
+                <br></br>
+                </>
+            }
+          </div>
     )
 }
 function mapStateToProps(state) {
@@ -27,4 +30,5 @@ function mapStateToProps(state) {
         events: state.events 
     }
 }
-export default connect(mapStateToProps)(eventPage)
+export default connect(mapStateToProps)(event)
+

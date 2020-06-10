@@ -1,9 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {loginUser, loginError} from '../actions/auth'
-import HomePage from './Weekly'
+import Weekly from './Weekly'
 
 class Login extends React.Component {
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -13,17 +14,22 @@ class Login extends React.Component {
     this.updateDetails = this.updateDetails.bind(this)
     this.submit = this.submit.bind(this)
   }
+  
   updateDetails(e) {
     this.setState({[e.target.name]: e.target.value})
   }
+  
   submit(e) {
     e.preventDefault()
     let {username, password} = this.state
     const confirmSuccess = () => { this.props.history.push('/') }
     this.props.dispatch(loginUser({username, password}, confirmSuccess))
   }
+  
   render() {
+    
     const {auth} = this.props
+    
     return (
       <form className="form box" onSubmit={this.submit}>
         <h1 className="title is-2">Login</h1>

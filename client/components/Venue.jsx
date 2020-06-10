@@ -5,8 +5,7 @@ export function venue(props) {
 
     return (
         <div>
-
-            <h1>{venues.name}</h1>
+            <h1>Venues</h1>
 
             {props.venues.map((venues) =>
                 <div key={venues.id}>

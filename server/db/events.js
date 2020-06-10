@@ -12,7 +12,7 @@ function getEventList(db = connection) {
 function getEvent(id, db = connection) {
     
     return db('events')
-    .where('id',id)
+    .where('id', id)
     .then((events) => {
         return events[0]
     })
