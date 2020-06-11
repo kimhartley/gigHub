@@ -9,7 +9,7 @@ function getEventList(db = connection) {
     .select()
 }
 
-function getEvent(id, db = connection) {
+function getEventById(id, db = connection) {
     
     return db('events')
     .where('id', id)
@@ -20,5 +20,5 @@ function getEvent(id, db = connection) {
 
 module.exports = {
     getEventList,
-    getEvent
+    getEventById
 }

@@ -11,23 +11,15 @@ router.get('/', (req, res) => {
 })
 
 
-router.get('/events/:eventsId', (req, res) => {
+router.get('/events/:id', (req, res) => {
     
-    let id = req.params.eventsId
-    db.getEvent(id)
+    let id = req.params.id
+    db.getEventById(id)
         .then((events) => {
             res.json(events)
         })
     
 })
 
-router.get('/:eventsId', (req,res) => {
-    let id = req.params.eventsId
-    db.getEvent(id)
-    .then((events) => {
-        res.json(events)
-    })
-    
-})
 
 module.exports = router

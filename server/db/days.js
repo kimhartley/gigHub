@@ -9,7 +9,7 @@ function getDayList(db = connection) {
     .select()
 }
 
-function getDay(id, db = connection) {
+function getDayById(id, db = connection) {
     
     return db('days')
     .where('id',id)
@@ -19,6 +19,6 @@ function getDay(id, db = connection) {
 }
 
 module.exports = {
-    getDay,
+    getDayById,
     getDayList
 }

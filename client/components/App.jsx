@@ -52,8 +52,9 @@ export class App extends React.Component {
             <Route path="/weekly" component={Weekly} />
             <Route exact path="/venues" component={VenuesPage} />
             <Route exact path="/events" component={EventsPage} />
-            <Route exact path="/venues/:id" component={Venue} />
-            <Route exact path="/events/:id" component={Event} />
+            <Route exact path="/venues/:name" component={Venue} />
+            <Route path="/events/:name" component={Event} />
+    
           </div>
 
         </div>
@@ -70,3 +71,7 @@ const mapStateToProps = ({auth}) => {
 
 export default connect(mapStateToProps)(App)
 
+{/* <Route path="/events/:name" render={({match}) => <Event getEventById={this.fetchEvents} match={match} />} />
+<Route path="/events/:id" render={({match}) => 
+<Event getEventById={this.getEventById} eventId={match.params.id} />
+} /> */}

@@ -9,7 +9,7 @@ function getVenueList(db = connection) {
     .select()
 }
 
-function getVenue(id, db = connection) {
+function getVenueById(id, db = connection) {
     
     return db('venues')
     .where('id',id)
@@ -20,5 +20,5 @@ function getVenue(id, db = connection) {
 
 module.exports = {
     getVenueList,
-    getVenue
+    getVenueById
 }

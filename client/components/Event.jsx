@@ -4,26 +4,28 @@ import {connect} from 'react-redux'
 export function event(props) {
 
     console.log(props.match.params)
-  
+    
     const events = props.events
-  
+    const event = events.find(event => (props.match.params || event.name))
+    
     return (
          
          <div>
-             <h1>{events.name}</h1>
-              hello
-            {(props.match.params == events.id) && 
+            
+             {(event) &&
                 <>
-                <p>{events.image}</p>
-                <p>{events.venue}</p>
-                <p>{events.description}</p>
-                <p>{events.other}</p>
+                <h1>{event.name}</h1>
+                <p>{event.image}</p>
+                <p>{event.venue}</p>
+                <p>{event.description}</p>
+                <p>{event.other}</p>
                 <br></br>
                 </>
-            }
+            }   
           </div>
     )
 }
+
 function mapStateToProps(state) {
 
     return {

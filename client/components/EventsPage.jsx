@@ -5,15 +5,16 @@ import {setEvent} from '../actions/events'
 
 export class eventsPage extends React.Component {
    
-    componentDidMount () {
+    // componentDidMount () {
    
-        const { handle } = this.props.match.params
-        console.log(handle)
-        fetch(`api/v1/events/${handle}`)
-          .then((events) => {
-            this.setState(() => ({ events }))
-          })
-      }
+    //     const { name } = this.props.match.params
+    //     console.log(name)
+    //     fetch(`api/v1/events/${name}`)
+    //       .then((events) => {
+    //           console.log(events)
+    //         this.setState(() => ({ events }))
+    //       })
+    //   }
 
     render(){
    
@@ -22,10 +23,10 @@ export class eventsPage extends React.Component {
             <div>
                 <h1>Events</h1>
                    
-                    {this.props.events.map((events) =>
-                    <div key={events.id}>
-                        <img src={events.image}></img>
-                        <Link to= {`/events/${events.id}`}><p>{events.name}</p></Link>
+                    {this.props.events.map((event) =>
+                    <div key={event.id}>
+                        <img src={event.image}></img>
+                        <Link to= {`/events/${event.name}`}><p>{event.name}</p></Link>
                         {/* <Link to= {`/venues/${venues.name}`}><p>{events.venue}</p></Link> */}
                         <br></br>
                     </div>
@@ -43,7 +44,3 @@ function mapStateToProps(state) {
     }
 }
 export default connect(mapStateToProps)(eventsPage)
-
-// { pathname:
-// , state: {
-//     getEvent: this.props.eventProps}

@@ -8,6 +8,6 @@ export function getEvents () {
 }
 
 export function getEventById (event) {
-  return request.get(eventsUrl+`${event.id}`)
+  return request.get(eventsUrl +`${event.id}`)
   .then(res => res.body)
 }
