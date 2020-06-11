@@ -1,0 +1,32 @@
+.title {
+    font-size: 30px;
+    color: white;
+}
+
+.text {
+    font-size: 20px;
+    color: white;
+}
+
+.link {
+    font-size: 20px;
+   ;
+}
+
+.picture {
+    height: 300px;
+    width: 250px;
+}
+
+.weekly {
+    flex: 50%;
+    display: flex;
+}
+
+.column {
+    column-count: 2;
+}
+
+.background {
+   background-color: black;
+}

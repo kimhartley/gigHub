@@ -8,13 +8,13 @@ class venuesPage extends React.Component {
        
         return (
        
-       <div>
-            <h1>Venues</h1>
+       <div className="background">
+            <h1 className="title is-1">Venues</h1>
        
                 {this.props.venues.map((venues) =>
                     <div key={venues.id}>
-                        <img src={venues.image}></img>
-                        <Link to= {`/venues/${venues.name}`}><p>{venues.name}</p></Link>
+                        <img className="pic" src={venues.image}></img>
+                        <Link to= {`/venues/${venues.name}`}><p className="link">{venues.name}</p></Link>
                         <br></br>
                     </div>
                 )}

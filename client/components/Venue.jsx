@@ -9,17 +9,17 @@ export function venue(props) {
     
     return (
          
-         <div>
+         <div className="background">
             
              {(venue) &&
                 <>
-                <img src={venue.image}></img>
-                <h1>Venue: {venue.name}</h1>
-                <p>Address: {venue.address}</p>
-                <p>Description: {venue.description}</p>
-                <p>Ph: {venue.phone}</p>
+                <img className="pic" src={venue.image}></img>
+                <h1 className="title">Venue: {venue.name}</h1>
+                <p className="text">Address: {venue.address}</p>
+                <p className="text">Description: {venue.description}</p>
+                <p className="text">Ph: {venue.phone}</p>
                 {/* <Link to= {`/venues/${event.venue}`}><p>{event.venue}</p></Link> */}
-                <a role='button'><p>{venue.website}</p></a>
+                <a role='button'><p className="text">{venue.website}</p></a>
                 <br></br>
                 </>
             }   

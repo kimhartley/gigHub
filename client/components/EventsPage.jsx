@@ -19,19 +19,18 @@ export class eventsPage extends React.Component {
    
         return (
    
-            <div>
-                <h1>Events</h1>
-                   
-                    {this.props.events.map((event) =>
-                    <div key={event.id}>
-                        <img src={event.image}></img>
-                        <Link to= {`/events/${event.name}`}><p>Event: {event.name}</p></Link>
-                        <Link to= {`/venues/${event.venue}`}><p>{event.venue}</p></Link>
-                        <br></br>
+            <div className="background">
+                <h1 className="title is-1">Events</h1>
+                   <div className="column">
+                        {this.props.events.map((event) =>
+                        <div key={event.id}>
+                            <img className="pic" src={event.image}></img>
+                            <Link to= {`/events/${event.name}`}><p className="link">Event: {event.name}</p></Link>
+                            <Link to= {`/venues/${event.venue}`}><p className="link">Venue: {event.venue}</p></Link>
+                            <br></br>
+                        </div>
+                        )}
                     </div>
-                    )}
-                    
-            
             </div>
         )
     } 

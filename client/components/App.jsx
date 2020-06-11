@@ -45,16 +45,17 @@ export class App extends React.Component {
 
           <div className=''>
             {!auth.isAuthenticated &&
-              <Route exact path="/" component={Login} />
+              <Route exact path="/login" component={Login} />
             }
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/weekly" component={Weekly} />
+            <Route exact path="/" component={Weekly} />
+            <Route exact path="/weekly" component={Weekly} />
             <Route exact path="/venues" component={VenuesPage} />
             <Route exact path="/events" component={EventsPage} />
             <Route exact path="/venues/:name" component={Venue} />
             <Route exact path="/events/:name" component={Event} />
-    
+            <Route exact path="/{venue.website}" component={Venue} />
           </div>
 
         </div>

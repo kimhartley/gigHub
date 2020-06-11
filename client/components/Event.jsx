@@ -11,15 +11,15 @@ export function event(props) {
     
     return (
          
-         <div>
+         <div className="background">
             
              {(event) &&
                 <>
                 <img src={event.image}></img>
-                <h1>Event: {event.name}</h1>
-                <Link to= {`/venues/${event.venue}`}><p>{event.venue}</p></Link>
-                <p>Description: {event.description}</p>
-                <p>Other: {event.other}</p>
+                <h1 className="title">Event: {event.name}</h1>
+                <Link to= {`/venues/${event.venue}`}><p className="text">{event.venue}</p></Link>
+                <p className="text">Description: {event.description}</p>
+                <p className="text">Other: {event.other}</p>
                 <br></br>
                 </>
             }   
