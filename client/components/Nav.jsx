@@ -22,7 +22,7 @@ class Nav extends React.Component {
     const { auth, logout } = this.props
     const {showBurger} = this.state
 
-    return <nav className="navbar">
+    return <nav className="nave">
     <div className="container">
       <div className="navbar-brand">
         <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">

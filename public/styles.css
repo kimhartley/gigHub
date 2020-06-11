@@ -29,4 +29,14 @@
 
 .background {
    background-color: black;
+   width: 100vw;
+   min-height: 100vh;
+}
+
+.align {
+    text-align: center;
+}
+
+.nav {
+    background-color:#101010;
 }

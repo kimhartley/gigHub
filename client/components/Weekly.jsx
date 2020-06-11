@@ -13,7 +13,7 @@ export function weekly(props) {
                     <div key={days.id}>
                         <p className="text">{days.day}</p>
                         <p className="text">{days.date}</p>
-                        <Link to= {`/venues/${days.venue}`}><p className="link">Event: {days.venue}</p></Link>
+                        <Link to= {`/venues/${days.venue}`}><p className="link">Venue: {days.venue}</p></Link>
                         <Link to= {`/events/${days.event}`}><p className="link">Event: {days.event}</p></Link>
                         <p className="text">Artist: {days.artist1}</p>
                         <p className="text">Artist: {days.artist2}</p>

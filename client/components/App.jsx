@@ -32,9 +32,9 @@ export class App extends React.Component {
     
     return (
       <Router>
-        <div className="container has-text-centered">
+        <div className="align">
 
-          <div className="hero is-small is-primary">
+          <div className="nav">
             <div className="hero-body has-text-centered">
               <Link to='/' className="">
                 <h1 className="title is-1">gigHub</h1>
