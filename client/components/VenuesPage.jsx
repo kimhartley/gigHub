@@ -15,7 +15,6 @@ class venuesPage extends React.Component {
                     <div key={venues.id}>
                         <img src={venues.image}></img>
                         <Link to= {`/venues/${venues.name}`}><p>{venues.name}</p></Link>
-                        <Link to= {`/venues/${venues.name}`}><p>{venues.venue}</p></Link>
                         <br></br>
                     </div>
                 )}

@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {setEvent} from '../actions/events'
 
 export class eventsPage extends React.Component {
    
@@ -26,11 +25,12 @@ export class eventsPage extends React.Component {
                     {this.props.events.map((event) =>
                     <div key={event.id}>
                         <img src={event.image}></img>
-                        <Link to= {`/events/${event.name}`}><p>{event.name}</p></Link>
-                        {/* <Link to= {`/venues/${venues.name}`}><p>{events.venue}</p></Link> */}
+                        <Link to= {`/events/${event.name}`}><p>Event: {event.name}</p></Link>
+                        <Link to= {`/venues/${event.venue}`}><p>{event.venue}</p></Link>
                         <br></br>
                     </div>
                     )}
+                    
             
             </div>
         )

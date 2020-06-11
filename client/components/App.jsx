@@ -53,7 +53,7 @@ export class App extends React.Component {
             <Route exact path="/venues" component={VenuesPage} />
             <Route exact path="/events" component={EventsPage} />
             <Route exact path="/venues/:name" component={Venue} />
-            <Route path="/events/:name" component={Event} />
+            <Route exact path="/events/:name" component={Event} />
     
           </div>
 

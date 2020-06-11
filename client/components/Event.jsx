@@ -1,12 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 export function event(props) {
 
     console.log(props.match.params)
     
     const events = props.events
-    const event = events.find(event => (props.match.params || event.name))
+    const event = events.find(event => (props.match.params))
     
     return (
          
@@ -14,11 +15,11 @@ export function event(props) {
             
              {(event) &&
                 <>
-                <h1>{event.name}</h1>
-                <p>{event.image}</p>
-                <p>{event.venue}</p>
-                <p>{event.description}</p>
-                <p>{event.other}</p>
+                <img src={event.image}></img>
+                <h1>Event: {event.name}</h1>
+                <Link to= {`/venues/${event.venue}`}><p>{event.venue}</p></Link>
+                <p>Description: {event.description}</p>
+                <p>Other: {event.other}</p>
                 <br></br>
                 </>
             }   
