@@ -1,6 +1,7 @@
 .title {
     font-size: 30px;
     color: white;
+    text-align: center;
 }
 
 .text {
@@ -10,27 +11,13 @@
 
 .link {
     font-size: 20px;
-   ;
-}
-
-.picture {
-    height: 300px;
-    width: 250px;
-}
-
-.weekly {
-    flex: 50%;
-    display: flex;
-}
-
-.column {
-    column-count: 2;
 }
 
 .background {
    background-color: black;
    width: 100vw;
    min-height: 100vh;
+   
 }
 
 .align {
@@ -39,4 +26,33 @@
 
 .nav {
     background-color:#101010;
+}
+
+.card {
+    justify-content: center;
+    background-color:#101010;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    object-fit: contain;
+    color:white;
+    align-items:center;
+}
+
+.card-img {
+    width: 100%;    
+}
+
+.card-column {
+    float: left;
+    width: 32%;
+    height:300;
+    cursor: pointer;
+    border-color: #01ABAA;
+    border-width: medium;
+}
+
+.grid {
+display: inline-grid;
 }

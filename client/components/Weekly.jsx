@@ -1,30 +1,52 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-export function weekly(props) {
+class weekly extends React.Component {
 
-    return (
-        <div className="background">
+    render() {
 
-            <h1 className="title is-1">The Weekly Line Up</h1>
-            <div className="weekly">
-                {props.days.map((days) =>
-                    <div key={days.id}>
-                        <p className="text">{days.day}</p>
-                        <p className="text">{days.date}</p>
-                        <Link to= {`/venues/${days.venue}`}><p className="link">Venue: {days.venue}</p></Link>
-                        <Link to= {`/events/${days.event}`}><p className="link">Event: {days.event}</p></Link>
-                        <p className="text">Artist: {days.artist1}</p>
-                        <p className="text">Artist: {days.artist2}</p>
-                        <p className="text">Artist: {days.artist3}</p>
-                        <br></br>
-                    </div>
-                )}
+        return (
+            <div className="background">
+
+                <h1 className="title is-1">The Weekly Line Up</h1>
+
+                <div className="card"
+                    style={{
+                        border: "solid 3px #d3d3d3",
+                        margin: "10px auto",
+                        padding: "0px"
+                    }}>
+                    {this.props.days.map((days) =>
+                        <div key={days.id}>
+                            <ul style={{
+                                padding: "0px",
+                                margin:"10px"
+                            }}>
+                                <div className="content">
+                                    <h2>{days.day}</h2>
+                                    Date: {days.date}
+                                    <br />
+                                    <Link to={`/venues/${days.venue}`}>Venue: {days.venue}</Link>
+                                    <br />
+                                    <Link to={`/events/${days.event}`}>Event: {days.event}</Link>
+                                    <br/>
+                                    Artist: {days.artist1}
+                                    <br />
+                                    Artist: {days.artist2}
+                                    <br />
+                                    Artist: {days.artist3}
+                                    <br></br>
+                                </div>
+                            </ul>
+
+                        </div>)}
                 </div>
-        </div>
-    )
+            </div>
+        )
+    }
 }
+
 function mapStateToProps(state) {
 
     return {

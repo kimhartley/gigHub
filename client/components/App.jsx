@@ -32,7 +32,7 @@ export class App extends React.Component {
     
     return (
       <Router>
-        <div className="align">
+        <div className="background">
 
           <div className="nav">
             <div className="hero-body has-text-centered">
@@ -43,7 +43,7 @@ export class App extends React.Component {
             </div>
           </div>
 
-          <div className=''>
+          <div className='background'>
             {!auth.isAuthenticated &&
               <Route exact path="/login" component={Login} />
             }
