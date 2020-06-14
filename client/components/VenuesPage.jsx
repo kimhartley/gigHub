@@ -12,7 +12,7 @@ class venuesPage extends React.Component {
 
                 <h1 className="title is-1">Venues</h1>
 
-                <div className="card"
+                <div className="cards"
                     style={{
                         border: "solid 3px #d3d3d3",
                         margin: "10px auto",

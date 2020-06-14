@@ -24,10 +24,10 @@ export class eventsPage extends React.Component {
 
                 <h1 className="title is-1">Events</h1>
 
-                <div className="card"
+                <div className="cards"
                     style={{
                         border: "solid 3px #d3d3d3",
-                        margin: "20px auto",
+                        margin: "10px auto",
                         padding: "0px"
                     }}>
                     {this.props.events.map((event) =>

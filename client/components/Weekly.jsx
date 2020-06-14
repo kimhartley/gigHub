@@ -7,11 +7,11 @@ class weekly extends React.Component {
     render() {
 
         return (
-            <div className="background">
+            <div>
 
                 <h1 className="title is-1">The Weekly Line Up</h1>
 
-                <div className="card"
+                <div className="cards"
                     style={{
                         border: "solid 3px #d3d3d3",
                         margin: "10px auto",
@@ -23,8 +23,8 @@ class weekly extends React.Component {
                                 padding: "0px",
                                 margin:"10px"
                             }}>
-                                <div className="content">
-                                    <h2>{days.day}</h2>
+                                <div>
+                                    <h3>{days.day}</h3>
                                     Date: {days.date}
                                     <br />
                                     <Link to={`/venues/${days.venue}`}>Venue: {days.venue}</Link>
