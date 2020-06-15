@@ -47,7 +47,7 @@ class Nav extends React.Component {
               </form>
               )
             : (
-              <form class="form-inline">
+              <form className="form-inline">
                 <Link onClick={this.toggleBurger} className="nav-link" to='/login'>Login</Link>
                 <Link onClick={this.toggleBurger} className="nav-link" to='/register'>Register</Link>
               </form>

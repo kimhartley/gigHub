@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 export function venue(props) {
     
     const venues = props.venues
-    const venue = venues.find(venues => (props.match.params || venues.name))
+    const venue = venues.find(venue => venue.name === props.match.params.name)
     return (
 
         <div className="background">

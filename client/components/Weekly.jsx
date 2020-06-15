@@ -7,7 +7,7 @@ class weekly extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="background">
 
                 <h1 className="title is-1">The Weekly Line Up</h1>
 

@@ -20,7 +20,7 @@ export class eventsPage extends React.Component {
 
         return (
 
-            <div>
+            <div className="background">
 
                 <h1 className="title is-1">Events</h1>
 
@@ -37,7 +37,7 @@ export class eventsPage extends React.Component {
                                 margin:"10px"
                             }}>
                                 <img className="card-img" src={event.image} />
-                                <Link to={`/events/${event.id}`}>Event: {event.name}</Link>
+                                <Link to={`/events/${event.name}`}>Event: {event.name}</Link>
                                 <br></br>
                                 <Link to={`/venues/${event.venue}`}>Venue: {event.venue}</Link>
                                 <br></br>

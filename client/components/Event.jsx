@@ -9,7 +9,7 @@ export function event(props) {
     console.log(props)
    
     const events = props.events
-    const event = events.find(event => (props.match.params))
+    const event = events.find(event => event.name === props.match.params.name)
 
     return (
 
