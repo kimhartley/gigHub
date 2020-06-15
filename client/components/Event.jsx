@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 export function event(props) {
 
     console.log(props.match.params)
-
+    console.log(props)
+   
     const events = props.events
     const event = events.find(event => (props.match.params))
 
@@ -22,6 +23,7 @@ export function event(props) {
                             margin: "10px auto",
                             padding: "0px"
                         }}>
+                        <form className="form-inline">    
                         <ul style={{
                             padding: "0px",
                             margin:"10px"
@@ -37,7 +39,7 @@ export function event(props) {
                                 </div>
                             </div>
                         </ul>
-
+                        </form>
                     </div>
                 </>
             }

@@ -31,7 +31,7 @@ class Login extends React.Component {
     const {auth} = this.props
     
     return (
-      <form className="form box" onSubmit={this.submit}>
+      <form className="form-inline" onSubmit={this.submit}>
         <h1 className="title is-2">Login</h1>
         <hr />
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}

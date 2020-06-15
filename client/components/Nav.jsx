@@ -22,31 +22,35 @@ class Nav extends React.Component {
     const { auth, logout } = this.props
     const {showBurger} = this.state
 
-    return <nav className="nav">
+    return <nav className="card">
     <div className="container">
-      <div className="navbar-brand">
+      <div className="nav-item active">
         <span onClick={this.toggleBurger} className={`navbar-burger burger ${showBurger ? 'is-active': ''}`} data-target="navbarMenuHeroA">
+          <span></span>
+          <span></span>
+          <span></span>
           <span></span>
           <span></span>
           <span></span>
         </span>
       </div>
       <div id="navbarMenuHeroA" className={`navbar-menu ${showBurger ? "is-active" : ''}`}>
-        <div className="navbar-end">
+        <div>
           { auth.isAuthenticated
             ? (
-                <>
-                <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/events'>Events</Link>
-                <Link onClick={this.toggleBurger} className="navbar-item" to='/venues'>Venues</Link>
-                <Link onClick={this.toggleBurger} className="navbar-item" to='/weekly'>Weekly</Link>
-                <Link to='/' className="navbar-item is-large" onClick={() => logout()}>Logout</Link>
-                </>
+              
+              <form className="form-inline">
+                <Link onClick={this.toggleBurger} className="nav-link" to='/events'>Events</Link>
+                <Link onClick={this.toggleBurger} className="nav-link" to='/venues'>Venues</Link>
+                <Link onClick={this.toggleBurger} className="nav-link" to='/weekly'>Weekly</Link>
+                <Link to='/' className="nav-link" onClick={() => logout()}>Logout</Link>
+              </form>
               )
             : (
-              <>
-                <Link onClick={this.toggleBurger} className="navbar-item is-large" to='/login'>Login</Link>
-                <Link onClick={this.toggleBurger} className="navbar-item" to='/register'>Register</Link>
-              </>
+              <form class="form-inline">
+                <Link onClick={this.toggleBurger} className="nav-link" to='/login'>Login</Link>
+                <Link onClick={this.toggleBurger} className="nav-link" to='/register'>Register</Link>
+              </form>
             )
           }
         </div>

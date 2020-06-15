@@ -4,15 +4,6 @@
     text-align: center;
 }
 
-.align {
-    text-align: center;
-}
-
-.nav {
-    background-color:#101010;
-    
-}
-
 .cards {
     justify-content: center;
     background-color:#101010;
@@ -38,7 +29,7 @@
     width: 100%;    
 }
 
-body, html {
+.screen {
     margin-right: 10px;
     margin-left:  10px;
     margin-bottom: 10px;
@@ -48,4 +39,5 @@ body, html {
     background-color: black;
     max-width: 100vw;
     max-height: 100vh;
+    object-fit: contain;
   }

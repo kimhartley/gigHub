@@ -32,7 +32,7 @@ class Register extends React.Component {
   render() {
     const {auth} = this.props
     return (
-      <form className="Register form box" onSubmit={this.submit}>
+      <form className="card" onSubmit={this.submit}>
         <h1 className="title is-2">Register</h1>
         <hr />
         {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
@@ -47,7 +47,7 @@ class Register extends React.Component {
             <input required className="input is-large has-text-centered is-fullwidth" placeholder="Email" type="text" name="email" onChange={this.updateDetails} value={this.state.email}/>
           </label>
         </div>
-        <br />
+        
         <div className="columns">
           <label className="column is-6 label is-large has-text-centered">Password
             <input required className="input is-large has-text-centered is-fullwidth" placeholder="Password" type="password" name="password"  autoComplete="new-password" onChange={this.updateDetails} value={this.state.password}/>

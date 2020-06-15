@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter as Router, Route, Link} from 'react-router-dom'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchDays } from '../actions/days'
 import { fetchEvents } from '../actions/events'
@@ -16,9 +16,9 @@ import Register from './Register'
 import Nav from './Nav'
 
 export class App extends React.Component {
-  
+
   componentDidMount() {
-    
+
     const confirmSuccess = () => { }
     this.props.dispatch(checkAuth(confirmSuccess))
     this.props.dispatch(fetchDays())
@@ -27,44 +27,44 @@ export class App extends React.Component {
   }
 
   render() {
-    
-    const {auth} = this.props
-    
-    return (
-      <Router>
-        <div className="background">
 
-          <div className="nav">
-            <div className="hero-body has-text-centered">
+    const { auth } = this.props
+
+    return (
+      <Router className="screen">
+        <div className="background">
+          <div className="screen">
+          <div className="card">
+            <div className="form-inline my-2 my-lg-0">
               <Link to='/' className="">
                 <h1 className="title is-1">gigHub</h1>
               </Link>
-              <Nav />
+              <Nav className="form-control mr-sm-2" />
             </div>
           </div>
 
           <div className='background'>
-            {!auth.isAuthenticated &&
-              <Route exact path="/login" component={Login} />
+            {auth.isAuthenticated &&
+              <Route exact path="/" component={Weekly} />
             }
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route exact path="/" component={Weekly} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+
             <Route exact path="/weekly" component={Weekly} />
             <Route exact path="/venues" component={VenuesPage} />
             <Route exact path="/events" component={EventsPage} />
             <Route exact path="/venues/:name" component={Venue} />
-            <Route exact path="/events/:name" component={Event} />
+            <Route exact path="/events/:id" component={Event} />
             <Route exact path="/{venue.website}" component={Venue} />
           </div>
-
+          </div>
         </div>
       </Router>
     )
   }
 }
 
-const mapStateToProps = ({auth}) => {
+const mapStateToProps = ({ auth }) => {
   return {
     auth
   }
