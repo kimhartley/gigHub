@@ -32,8 +32,9 @@ export class App extends React.Component {
 
     return (
       <Router className="screen">
-        <div className="background">
+        
           <div className="screen">
+          <div>
           <div className="card">
             <div className="form-inline my-2 my-lg-0">
               <Link to='/' className="">

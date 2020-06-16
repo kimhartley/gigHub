@@ -10,7 +10,7 @@ class venuesPage extends React.Component {
 
             <div className="background">
 
-                <h1 className="title is-1">Venues</h1>
+                <h1 className="title">Venues</h1>
 
                 <div className="cards"
                     style={{

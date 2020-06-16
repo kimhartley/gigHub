@@ -22,7 +22,7 @@ export class eventsPage extends React.Component {
 
             <div className="background">
 
-                <h1 className="title is-1">Events</h1>
+                <h1 className="title">Events</h1>
 
                 <div className="cards"
                     style={{
