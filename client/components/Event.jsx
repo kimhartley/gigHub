@@ -7,7 +7,7 @@ export function event(props) {
 
     console.log(props.match.params)
     console.log(props)
-   
+
     const events = props.events
     const event = events.find(event => event.name === props.match.params.name)
 
@@ -17,29 +17,25 @@ export function event(props) {
 
             {(event) &&
                 <>
-                    <div className="card"
-                        style={{
-                            border: "solid 3px #d3d3d3",
+                    <div className="card">
+                        
+                            <ul style={{
+                            border: "solid 4px #d3d3d3",
                             margin: "10px auto",
-                            padding: "0px"
+                            padding: "10px"
                         }}>
-                        <form className="form-inline">    
-                        <ul style={{
-                            padding: "0px",
-                            margin:"10px"
-                        }}>
-                            <img className="card-img" src={event.image} />
-                            <div className="content">
-                                <h2>{event.name}</h2>
-                                <Link to={`/venues/${event.venue}`}>Venue: {event.venue}</Link>
-                                <div>
-                                    Description: {event.description}
-                                    <br></br>
+                                <img className="card-img" src={event.image} />
+                                <div className="content">
+                                    <h2>{event.name}</h2>
+                                    <Link to={`/venues/${event.venue}`}>Venue: {event.venue}</Link>
+                                    <div>
+                                        Description: {event.description}
+                                        <br></br>
                                     Other: {event.other}
+                                    </div>
                                 </div>
-                            </div>
-                        </ul>
-                        </form>
+                            </ul>
+                        
                     </div>
                 </>
             }

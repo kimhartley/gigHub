@@ -31,20 +31,21 @@ export class App extends React.Component {
     const { auth } = this.props
 
     return (
-      <Router className="screen">
-        
-          <div className="screen">
-          <div>
+      <Router>
+
+        <div className="screen">
+
           <div className="card">
             <div className="form-inline my-2 my-lg-0">
               <Link to='/' className="">
                 <h1 className="title is-1">gigHub</h1>
               </Link>
               <Nav className="form-control mr-sm-2" />
+              
             </div>
           </div>
-
-          <div className='background'>
+          <br></br>
+          <div className='card'>
             {auth.isAuthenticated &&
               <Route exact path="/" component={Weekly} />
             }
@@ -58,7 +59,7 @@ export class App extends React.Component {
             <Route exact path="/events/:name" component={Event} />
             <Route exact path="/{venue.website}" component={Venue} />
           </div>
-          </div>
+
         </div>
       </Router>
     )
@@ -72,8 +73,3 @@ const mapStateToProps = ({ auth }) => {
 }
 
 export default connect(mapStateToProps)(App)
-
-{/* <Route path="/events/:name" render={({match}) => <Event getEventById={this.fetchEvents} match={match} />} />
-<Route path="/events/:id" render={({match}) => 
-<Event getEventById={this.getEventById} eventId={match.params.id} />
-} /> */}

@@ -31,17 +31,23 @@ class Login extends React.Component {
     const {auth} = this.props
     
     return (
-      <form className="form-inline" onSubmit={this.submit}>
-        <h1 className="title is-2">Login</h1>
-        <hr />
-        {auth.errorMessage && <span className="has-text-danger is-large">{auth.errorMessage}</span>}
-        <label className="label is-large has-text-centered">Username
-          <input required className="input has-text-centered is-large is-fullwidth" placeholder="User Name" type="text" name="username" autoComplete="username" value={this.state.username} onChange={this.updateDetails}/>
+      <form className="card" onSubmit={this.submit}>
+        <h1>Login</h1>
+        
+        {auth.errorMessage && <span>{auth.errorMessage}</span>}
+        <label>Username
+          <input required style= {{
+            margin: "10px"
+          }} placeholder="User Name" type="text" name="username" autoComplete="username" value={this.state.username} onChange={this.updateDetails}/>
         </label>
-        <label className="label is-large has-text-centered">Password
-          <input required className="input has-text-centered is-large is-fullwidth" placeholder="Password" type="password" name="password" autoComplete="current-password" value={this.state.password} onChange={this.updateDetails}/>
+        <label>Password
+          <input required style= {{
+            margin: "10px"
+          }} placeholder="Password" type="password" name="password" autoComplete="current-password" value={this.state.password} onChange={this.updateDetails}/>
         </label>
-        <input className="button is-large is-fullwidth is-success" value='Login' type="submit" />
+        <input style= {{
+            margin: "10px"
+          }} value='Login' type="submit" />
       </form>
     )
   }

@@ -12,15 +12,11 @@ export function venue(props) {
 
             {(venue) &&
                 <>
-                    <div className="card"
-                        style={{
-                            border: "solid 3px #d3d3d3",
-                            margin: "10px auto",
-                            padding: "0px"
-                        }}>
+                    <div className="card">
                         <ul style={{
-                            padding: "0px",
-                            margin:"10px"
+                            border: "solid 4px #d3d3d3",
+                            margin: "10px auto",
+                            padding: "10px"
                         }}>
                             <img className="card-img" src={venue.image} />
                             <div className="content">

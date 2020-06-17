@@ -11,18 +11,14 @@ class weekly extends React.Component {
 
                 <h1 className="title">The Weekly Line Up</h1>
 
-                <div className="cards"
-                    style={{
-                        border: "solid 3px #d3d3d3",
-                        margin: "10px auto",
-                        padding: "0px"
-                    }}>
+                <div className="cards-alt">
                     {this.props.days.map((days) =>
                         <div key={days.id}>
                             <ul style={{
-                                padding: "0px",
-                                margin:"10px"
-                            }}>
+                            border: "solid 1px #d3d3d3",
+                            margin: "10px",
+                            padding: "5px"
+                        }}>
                                 
                                     {days.day}
                                     <br />
@@ -37,10 +33,8 @@ class weekly extends React.Component {
                                     Artist: {days.artist2}
                                     <br />
                                     Artist: {days.artist3}
-                                    <br></br>
                                 
                             </ul>
-
                         </div>)}
                 </div>
             </div>

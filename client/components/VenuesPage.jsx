@@ -12,18 +12,15 @@ class venuesPage extends React.Component {
 
                 <h1 className="title">Venues</h1>
 
-                <div className="cards"
-                    style={{
-                        border: "solid 3px #d3d3d3",
-                        margin: "10px auto",
-                        padding: "0px"
-                    }}>
+                <div className="cards">
                     {this.props.venues.map((venue) =>
                         <div key={venue.id}>
-                            <ul className="align" style={{
-                                padding: "0px",
-                                margin:"10px"
-                            }}>
+                            <ul className="align" 
+                            style={{
+                            border: "solid 1px #d3d3d3",
+                            margin: "10px",
+                            padding: "5px"
+                        }}>
                                 <img className="card-img" src={venue.image} />
                                 <Link to={`/venues/${venue.name}`}>Venue: {venue.name}</Link>
                             </ul>

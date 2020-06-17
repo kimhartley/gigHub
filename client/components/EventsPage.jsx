@@ -20,21 +20,19 @@ export class eventsPage extends React.Component {
 
         return (
 
-            <div className="background">
+            <div>
 
                 <h1 className="title">Events</h1>
 
-                <div className="cards"
-                    style={{
-                        border: "solid 3px #d3d3d3",
-                        margin: "10px auto",
-                        padding: "0px"
-                    }}>
+                <div className="cards-alt">
                     {this.props.events.map((event) =>
                         <div key={event.id}>
-                            <ul className="align"style={{
-                                padding: "0px",
-                                margin:"10px"
+                            <ul className="align"
+                            style={{
+                                border: "solid 1px #d3d3d3",
+                                margin: "10px",
+                                padding: "5px"
+                            
                             }}>
                                 <img className="card-img" src={event.image} />
                                 <Link to={`/events/${event.name}`}>Event: {event.name}</Link>
