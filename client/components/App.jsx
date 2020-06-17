@@ -31,10 +31,8 @@ export class App extends React.Component {
     const { auth } = this.props
 
     return (
-      <Router className="screen">
+      <Router>
         
-          <div className="screen">
-          <div>
           <div className="card">
             <div className="form-inline my-2 my-lg-0">
               <Link to='/' className="">
@@ -51,15 +49,14 @@ export class App extends React.Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
 
-            <Route exact path="/weekly" component={Weekly} />
-            <Route exact path="/venues" component={VenuesPage} />
             <Route exact path="/events" component={EventsPage} />
-            <Route exact path="/venues/:name" component={Venue} />
             <Route exact path="/events/:name" component={Event} />
+            <Route exact path="/venues" component={VenuesPage} />
+            <Route exact path="/venues/:name" component={Venue} />
+            <Route exact path="/weekly" component={Weekly} />
             <Route exact path="/{venue.website}" component={Venue} />
           </div>
-          </div>
-        </div>
+          
       </Router>
     )
   }
