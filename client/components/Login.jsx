@@ -15,12 +15,12 @@ class Login extends React.Component {
     this.submit = this.submit.bind(this)
   }
   
-  updateDetails(e) {
-    this.setState({[e.target.name]: e.target.value})
+  updateDetails(evt) {
+    this.setState({[evt.target.name]: evt.target.value})
   }
   
-  submit(e) {
-    e.preventDefault()
+  submit(evt) {
+    evt.preventDefault()
     let {username, password} = this.state
     const confirmSuccess = () => { this.props.history.push('/') }
     this.props.dispatch(loginUser({username, password}, confirmSuccess))

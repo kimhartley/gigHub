@@ -17,7 +17,7 @@ class venuesPage extends React.Component {
                         <div key={venue.id}>
                             <ul className="align" 
                             style={{
-                            border: "solid 1px #d3d3d3",
+                            border: "solid 2px #d3d3d3",
                             margin: "10px",
                             padding: "5px"
                         }}>

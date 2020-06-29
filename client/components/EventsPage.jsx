@@ -29,7 +29,7 @@ export class eventsPage extends React.Component {
                         <div key={event.id}>
                             <ul className="align"
                             style={{
-                                border: "solid 1px #d3d3d3",
+                                border: "solid 2px #d3d3d3",
                                 margin: "10px",
                                 padding: "5px"
                             

@@ -15,15 +15,18 @@ class Register extends React.Component {
     this.updateDetails = this.updateDetails.bind(this)
     this.submit = this.submit.bind(this)
   }
+
   componentDidMount() {
     this.props.dispatch(loginError(''))
   }
-  updateDetails(e) {
-    this.setState({[e.target.name]: e.target.value})
+  
+  updateDetails(evt) {
+    this.setState({[evt.target.name]: evt.target.value})
   }
-  submit(e) {
-    e.preventDefault()
-    e.target.reset()
+  
+  submit(evt) {
+    evt.preventDefault()
+    evt.target.reset()
     let {username, password, confirm_password, name, email} = this.state
     if (confirm_password != password) return this.props.dispatch(loginError("Passwords don't match"))
     const confirmSuccess = () => { this.props.history.push('/') }
